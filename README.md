@@ -248,8 +248,7 @@ temp_closure_1:
 ### Toplevel functions
 
 We are leaving in toplevel functions (i.e. functions defined with `def`). 
-Since toplevel functions can have the same names as variables, we will always
-have toplevel functions take precedence. Thus:
+We will let variable names shadow function names. Thus:
 
 ```
 def f(x, y):
@@ -258,7 +257,7 @@ let f = (lambda x,y: x + y) in
 f(2,1)
 ```
 
-returns `1`.
+returns `3`.
 
 ### Mutable Tuples
 
