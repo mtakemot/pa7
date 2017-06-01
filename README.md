@@ -5,6 +5,8 @@
 Fer-de-lance, aka FDL, aka **F**unctions **D**efined by **L**ambdas, is a
 language with anonymous, first-class functions.
 
+Get your [own repository here](https://classroom.github.com/assignment-invitations/8b6975e6225fd13c53057dfafd0e8da0)
+
 ## Language
 
 ### Syntax
