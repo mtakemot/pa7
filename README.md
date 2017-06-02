@@ -219,7 +219,7 @@ We would generate code for the caller like:
 ```
 <store return address at [esp - 4*si]>
 <store esp at [esp-4*(si + 1)]>
-mov [esp - 4*(si + 2)], eax  ;; assuming eax contains the address of f's closure
+mov [esp - 4*(si + 2)], eax  ;; assuming eax contains the *untagged* address of f's closure
 <code to check that eax is tagged 101, and has arity 2, etc>
 mov [esp - 4*(si + 3)], 8
 mov [esp - 4*(si + 4)], 10
@@ -240,9 +240,9 @@ temp_closure_1:
   ;; arguments live at esp - 12 and esp - 16,
   ;; so restore environment to the next available
   ;; stack slots, i.e. esp - 20 and esp - 24
-  mov ecx, [eax + 3]
+  mov ecx, [eax + 8]
   mov [esp - 20], ecx
-  mov ecx, [eax + 7]
+  mov ecx, [eax + 12]
   mov [esp - 24], ecx
   ... and so on ...
 ```
