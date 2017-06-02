@@ -194,9 +194,9 @@ temp_closure_1:
   <usual prelude>
   mov eax, <function value?>
 
-  mov ecx, [eax + 3]
+  mov ecx, [eax + 8]
   mov [esp - 8], ecx
-  mov ecx, [eax + 7]
+  mov ecx, [eax + 12]
   mov [esp - 12], ecx
   ... and so on ...
 ```
