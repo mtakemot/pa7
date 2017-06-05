@@ -16,15 +16,15 @@ let find_decl (ds : decl list) (name : string) : decl option =
 let type_mask ty = HexConst
   (match ty with
    | TNum     -> 0x1
-   | TBool    -> 0x3
-   | TPair    -> 0x1
+   | TBool    -> 0x7
+   | TPair    -> 0x7
    | TClosure -> 0x7
   )
 
 let type_tag ty = HexConst
   (match ty with
    | TNum     -> 0x0
-   | TBool    -> 0x3
+   | TBool    -> 0x7
    | TPair    -> 0x1
    | TClosure -> 0x5
   )
