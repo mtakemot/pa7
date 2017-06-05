@@ -254,9 +254,11 @@ and compile_app (fe : expr) (args : expr list)
 
 and compile_pair (e1: expr) (e2: expr) (si: int) (ds : decl list) (env: int envt) : instruction list =
     compile_expr e1 si ds env
-  @ [ IMov (Sized(DWORD_PTR, RegOffset(0, EBX)), Reg(EAX)) ]
-  @ compile_expr e2 si ds env
+  @ [ IMov (Sized(DWORD_PTR, stackloc si), Reg(EAX)) ]
+  @ compile_expr e2 (si+1) ds env
   @ [ IMov (Sized(DWORD_PTR, RegOffset(4, EBX)), Reg(EAX))
+    ; IMov (Reg EAX, stackloc si)
+    ; IMov (Sized(DWORD_PTR, RegOffset(0, EBX)), Reg(EAX))
     ; IMov (Reg(EAX), Reg(EBX))
     ; IAdd (Reg(EAX), Const(1))
     ; IAdd (Reg(EBX), Const(8))

@@ -202,6 +202,8 @@ let reg =
 
   ; terr "overflow" overflow "overflow"
   ; terr "underflow" underflow "overflow"
+
+  ; t "nested_tuple" "((1, 2), (3, 4))" "((1, 2), (3, 4))"
   ]
 
 
