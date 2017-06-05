@@ -97,7 +97,7 @@ The value layout is now:
 
 An important part of saving function values is figuring out the set of
 variables that need to be stored, and storing them on the heap.  Our compiler
-needs to generated code to store all of the _free_ variables in a function –
+needs to generate code to store all of the _free_ variables in a function –
 all the variables that are used but not defined by an argument or let binding
 inside the function.  So, for example, `x` is free and `y` is not in:
 
@@ -296,11 +296,11 @@ We're releasing 5 buggy and 1 working (as far as we know) compiler.
 To see the output of all these compilers with your test cases:
 
 1. Log into `ieng6`
-2. `cd` to the root of your homework (i.e. `pa6-garter-<github username>`)
-3. Run `pa7_coverage_test <program>` where
-   `<program>` is the string that you want to evaluate, `<heap size>` is the
-   size of the heap in words, and rest are inputs to the language. Only
-   `<program>` is mandatory. If you've written your program into a file, you can
+2. `cd` to the root of your homework (i.e. `pa7-fer-de-lance-<github username>`)
+3. Run `pa7_coverage_test <program> [<input 0>, <input 1>, ...]` where
+   `<program>` is the string that you want to evaluate, and `<input 0>`, `<input 1>`, ...
+   are the inputs to the program. Only `<program>` is mandatory.
+   If you've written your program into a file, you can
    use `pa7_coverage_test "$(cat <filename>)" ...`.
 4. The corresponding `.s` and `.run` files will be created inside the
    `output{i}` folder, where `{i}` corresponds to the id of the compiler.
